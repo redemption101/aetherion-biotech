@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aetherion Biotech v5.0</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body class="flex h-screen w-screen">
+    
+    <div class="flex-1 flex flex-col min-w-0 h-full relative z-10">
+      
+      <!-- Top Navigation Header -->
+      <header class="h-20 glass-panel border-b-0 border-r-0 flex items-center justify-between px-8 z-20">
+        <div class="flex items-center gap-6">
+          <h1 class="text-2xl text-neon font-bold tracking-widest uppercase flex items-center gap-2">
+            Aetherion<span class="text-xs text-textmuted border border-borderize px-2 py-1 rounded">v5.0</span>
+          </h1>
+          <nav class="flex gap-1">
+            <button id="tab-synthesis" class="tab-btn px-3 py-2 rounded-lg bg-neon/10 text-neon border border-neon/30 text-xs font-bold tracking-wide transition-all shadow-glow-neon">SYNTHESIS</button>
+            <button id="tab-genome" class="tab-btn px-3 py-2 rounded-lg hover:bg-borderize text-textmuted text-xs font-bold tracking-wide transition-all border border-transparent">GENOMICS</button>
+            <button id="tab-clinical" class="tab-btn px-3 py-2 rounded-lg hover:bg-borderize text-textmuted text-xs font-bold tracking-wide transition-all border border-transparent">CLINICAL</button>
+            <button id="tab-ledger" class="tab-btn px-3 py-2 rounded-lg hover:bg-borderize text-textmuted text-xs font-bold tracking-wide transition-all border border-transparent">LEDGER</button>
+            <button id="tab-security" class="tab-btn px-3 py-2 rounded-lg hover:bg-borderize text-textmuted text-xs font-bold tracking-wide transition-all border border-transparent">PRIVACY & SEC</button>
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <button id="btn-theme" class="px-3 py-2 border border-borderize rounded bg-panel hover:bg-borderize text-textmuted text-xs font-bold tracking-widest transition-colors">
+            THEME
+          </button>
+          <div class="text-xs font-mono text-textmuted text-right hidden lg:block">
+            <div>FDA COMPLIANCE: <span class="text-safe">ENFORCED</span></div>
+            <div>Z3 OMNI: <span class="text-safe">ACTIVE</span></div>
+          </div>
+          <div id="status-indicator" class="px-4 py-2 rounded border border-borderize bg-panel text-textmain font-mono font-bold text-xs tracking-widest transition-all duration-300 flex items-center gap-2">
+            <div id="status-dot" class="w-2 h-2 rounded-full bg-textmuted animate-pulse"></div>
+            <span id="status-text">IDLE</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 p-8 overflow-y-auto">
+        
+        <!-- Tab 1: Synthesis Pipeline (Updated with Confidence Scores) -->
+        <section id="view-synthesis" class="view-section active max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h2 class="text-3xl text-textmain font-light tracking-wide mb-2">Molecular Thermodynamics Verifier</h2>
+            <p class="text-textmuted">Inject sequences. Includes model transparency and explainable AI confidence scores.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <button id="btn-safe" class="tech-button hover:border-safe hover:shadow-glow-safe group">
+              <div class="absolute top-0 left-0 w-full h-1 bg-safe/20 group-hover:bg-safe transition-colors"></div>
+              <div class="flex justify-between w-full mb-6">
+                <h3 class="text-2xl text-textmain font-light transition-colors">Omega-9 Protein</h3>
+                <span class="bg-safe/10 text-safe border border-safe/20 px-3 py-1 rounded-full text-xs tracking-widest">98.2% CONFIDENCE</span>
+              </div>
+              <p class="text-sm text-textmuted text-left mb-4 flex-1">Target: Cellular Regeneration. Z3 theorem prover indicates high stability. <br><span class="text-neon text-xs mt-2 block">Explainability: Gene expression aligns with cohort clustering pattern Alpha.</span></p>
+              <div class="w-full bg-aether p-3 rounded border border-borderize font-mono text-xs text-textmuted text-left flex justify-between">
+                <span>> TARGET MARGIN: <span class="text-safe font-bold">+45.5 JOULES</span></span>
+                <span>[ VIEW AI REASONING ]</span>
+              </div>
+            </button>
+            
+            <button id="btn-danger" class="tech-button hover:border-hazard hover:shadow-glow-hazard group">
+              <div class="absolute top-0 left-0 w-full h-1 bg-hazard/20 group-hover:bg-hazard transition-colors"></div>
+              <div class="flex justify-between w-full mb-6">
+                <h3 class="text-2xl text-textmain font-light transition-colors">Volatile Isotope-X</h3>
+                <span class="bg-hazard/10 text-hazard border border-hazard/20 px-3 py-1 rounded-full text-xs tracking-widest">12.4% CONFIDENCE</span>
+              </div>
+              <p class="text-sm text-textmuted text-left mb-4 flex-1">Target: Pathogen Eradication. High risk of absolute structural collapse. <br><span class="text-hazard text-xs mt-2 block">Explainability: Algorithm flagged mutation on Exon 4 (Unstable loop detected).</span></p>
+              <div class="w-full bg-aether p-3 rounded border border-borderize font-mono text-xs text-textmuted text-left flex justify-between">
+                <span>> TARGET MARGIN: <span class="text-hazard font-bold">-10.0 JOULES</span></span>
+                <span>[ VIEW AI REASONING ]</span>
+              </div>
+            </button>
+          </div>
+        </section>
+
+        <!-- Tab 2: Genome Explorer (NEW) -->
+        <section id="view-genome" class="view-section max-w-6xl mx-auto">
+          <div class="mb-10 flex justify-between items-end">
+            <div>
+              <h2 class="text-3xl text-textmain font-light tracking-wide mb-2">Interactive Genome Browser</h2>
+              <p class="text-textmuted">Multi-omics dashboard integrating genomic, proteomic, and phenotypic data streams.</p>
+            </div>
+            <button id="btn-analyze-genome" class="px-4 py-2 bg-neon/10 text-neon border border-neon rounded hover:bg-neon hover:text-white transition-all text-sm font-bold tracking-widest shadow-glow-neon">
+              INITIATE MULTI-OMICS SCAN
+            </button>
+          </div>
+          
+          <div class="grid grid-cols-3 gap-6">
+            <!-- DNA Sequence Viewer -->
+            <div class="col-span-3 glass-panel rounded-xl p-6 border-neon/30 relative overflow-hidden">
+              <h3 class="text-sm font-bold text-textmain mb-4 tracking-widest">DNA SEQUENCE VISUALIZER // CHROMOSOME 9</h3>
+              <div class="w-full overflow-x-auto bg-aether p-4 rounded border border-borderize font-mono text-lg tracking-[0.5em] text-textmuted whitespace-nowrap scrollbar-hide">
+                <span class="text-safe">A</span>T<span class="text-neon">G</span>C<span class="text-safe">A</span><span class="text-safe">A</span>T<span class="text-hazard underline decoration-hazard decoration-2 cursor-pointer hover:bg-hazard/20">C</span>G<span class="text-neon">G</span>T<span class="text-safe">A</span>C<span class="text-neon">G</span><span class="text-neon">G</span>T<span class="text-safe">A</span>...
+              </div>
+              <p class="text-xs text-hazard mt-2 text-right">* Variant detected at locus 9q34.1</p>
+            </div>
+
+            <!-- Heatmaps & Pathway Maps placeholders -->
+            <div class="col-span-2 glass-panel rounded-xl p-6 h-48 flex items-center justify-center border-dashed border-borderize">
+              <span class="text-textmuted font-mono">[ RENDER: COHORT CLUSTERING HEATMAP ]</span>
+            </div>
+            <div class="col-span-1 glass-panel rounded-xl p-6 h-48 flex items-center justify-center border-dashed border-borderize">
+              <span class="text-textmuted font-mono">[ RENDER: BIOLOGICAL PATHWAY ]</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tab 3: Clinical Workspace (NEW) -->
+        <section id="view-clinical" class="view-section max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h2 class="text-3xl text-textmain font-light tracking-wide mb-2">Clinical & Research Workflows</h2>
+            <p class="text-textmuted">Role-based adaptive views, secure collaboration, and FDA-compliant validation.</p>
+          </div>
+
+          <div class="flex gap-4 mb-8">
+            <button class="px-4 py-2 border border-borderize rounded bg-panel text-textmain text-sm font-bold active-role shadow-glow-neon">👨‍⚕️ CLINICIAN VIEW</button>
+            <button class="px-4 py-2 border border-borderize rounded bg-aether text-textmuted hover:text-textmain text-sm font-bold">🧬 BIOINFORMATICIAN VIEW</button>
+          </div>
+
+          <div class="glass-panel border-safe/30 rounded-xl p-8 bg-safe/5">
+            <div class="flex justify-between items-start mb-6">
+              <h3 class="text-xl text-textmain">Patient Profile: Alpha-77</h3>
+              <span class="bg-safe text-white px-3 py-1 rounded text-xs tracking-widest font-bold">FDA VALIDATED</span>
+            </div>
+            <p class="text-sm text-textmuted mb-6">Algorithm flagged mutation. Clinical trial matching is 100% compliant with 21 CFR Part 11.</p>
+            <button id="btn-audit" class="px-6 py-2 font-mono text-sm bg-borderize text-textmain border border-borderize hover:border-safe hover:text-safe rounded transition-all tracking-widest">
+              > GENERATE COMPLIANCE AUDIT TRAIL
+            </button>
+          </div>
+        </section>
+
+        <!-- Tab 4: Ledger (Existing) -->
+        <section id="view-ledger" class="view-section max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h2 class="text-3xl text-textmain font-light tracking-wide mb-2">Immutable Ethics Ledger</h2>
+            <p class="text-textmuted">Live synchronization with Erlang Mnesia DBMS. All queries are audit-ready.</p>
+          </div>
+          <div class="glass-panel rounded-xl overflow-hidden">
+            <table class="w-full text-left text-sm">
+              <thead class="bg-panel text-textmuted text-xs tracking-widest border-b border-borderize uppercase">
+                <tr>
+                  <th class="p-5 font-medium">Timestamp</th>
+                  <th class="p-5 font-medium">Sequence ID</th>
+                  <th class="p-5 font-medium">Margin</th>
+                  <th class="p-5 font-medium">Status</th>
+                </tr>
+              </thead>
+              <tbody id="ledger-body" class="divide-y divide-borderize bg-aether/50"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Tab 5: Security & Privacy (Updated) -->
+        <section id="view-security" class="view-section max-w-6xl mx-auto">
+          <div class="mb-10">
+            <h2 class="text-3xl text-textmain font-light tracking-wide mb-2">Zero-Trust Privacy & Security</h2>
+            <p class="text-textmuted">Decentralized sovereignty, encrypted views, and Honeypot intrusion detection.</p>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-6 mb-6">
+            <!-- Patient Consent & IPFS -->
+            <div class="glass-panel border-neon/30 rounded-xl p-8 bg-neon/5">
+              <h3 class="text-xl text-textmain mb-2">Consent & Storage Management</h3>
+              <p class="text-sm text-textmuted mb-6">Patient data is encrypted. Decentralized storage allows patients to control data usage.</p>
+              <button id="btn-ipfs" class="px-6 py-2 w-full font-mono text-sm bg-neon/10 border border-neon text-neon hover:bg-neon hover:text-white rounded transition-all tracking-widest shadow-glow-neon">
+                > MIGRATE TO IPFS BLOCKCHAIN
+              </button>
+            </div>
+
+            <!-- Zero-Day Honeypot -->
+            <div class="glass-panel border-hazard/30 rounded-xl p-8 bg-hazard/5">
+              <h3 class="text-xl text-textmain mb-2">Simulate External Intrusion</h3>
+              <p class="text-sm text-textmuted mb-6">Fire a malicious payload. The system will route the exploit into the honeypot.</p>
+              <button id="btn-hack" class="px-6 py-2 w-full font-mono text-sm bg-hazard/10 border border-hazard text-hazard hover:bg-hazard hover:text-white hover:shadow-glow-hazard rounded transition-all tracking-widest">
+                > EXECUTE: BYPASS_Z3_GUARD
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Right Terminal -->
+    <aside class="w-96 glass-panel border-y-0 border-r-0 flex flex-col z-20">
+      <div class="h-20 flex items-center px-6 border-b border-borderize bg-panel justify-between">
+        <h2 class="text-xs font-bold text-neon uppercase tracking-widest cursor-blink font-mono">Terminal Output</h2>
+        <button id="btn-clear" class="text-xs text-textmuted hover:text-textmain">CLEAR</button>
+      </div>
+      <div id="terminal-log" class="flex-1 p-6 overflow-y-auto space-y-4 text-xs font-mono pb-8 bg-aether/50">
+        <div class="text-safe opacity-80">> Aetherion Interface initialized. Waiting for input...</div>
+      </div>
+    </aside>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

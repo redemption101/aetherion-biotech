@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-aether text-slate-300 font-sans h-screen w-screen overflow-hidden selection:bg-neon selection:text-white;
+    background-image: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 70%);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-panel/40 backdrop-blur-xl border border-borderize shadow-2xl;
+  }
+  .tech-button {
+    @apply flex flex-col p-6 rounded-xl border border-borderize bg-panel/30 backdrop-blur-md transition-all duration-300 cursor-pointer overflow-hidden relative;
+  }
+}
+
+/* Cyberpunk Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
+
+.cursor-blink::after { content: '_'; animation: blink 1s step-start infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+.view-section { display: none; }
+.view-section.active {
+  display: block;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; filter: blur(4px); }
+  to { transform: translateY(0); opacity: 1; filter: blur(0); }
+}

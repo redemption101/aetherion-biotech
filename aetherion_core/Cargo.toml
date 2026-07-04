@@ -1,0 +1,12 @@
+[package]
+name = "aetherion_core"
+version = "5.0.0"
+edition = "2021"
+
+[lib]
+name = "aetherion_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+z3 = "0.12.1"
+rustler = "0.29.0"

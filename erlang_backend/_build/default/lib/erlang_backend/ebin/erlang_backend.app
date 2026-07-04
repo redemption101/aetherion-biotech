@@ -1,0 +1,8 @@
+{application,erlang_backend,
+             [{description,"Aetherion Cowboy API Server"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{biotech_app,[]}},
+              {applications,[kernel,stdlib,cowboy,jsx]},
+              {env,[]},
+              {modules,[biotech_app,biotech_sup]}]}.
